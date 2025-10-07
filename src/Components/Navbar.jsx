@@ -5,8 +5,9 @@ import { Github } from "lucide-react";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-100 shadow-sm px-8">
         <div className="navbar-start">
+            {/* note:small screen */}
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -54,47 +55,48 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link
-            to="/"
-            className="btn btn-ghost text-xl flex items-center gap-2"
-          >
+          {/* small screen */}
+
+          {/* note:Logo */}
+          <Link to="/" className=" text-xl text-purple-600 font-semibold flex items-center gap-2">
             <img src={logo} alt="logo" className="h-6 w-6" />
             HERO.IO
           </Link>
+          {/* note:Logo */}
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li className="mr-5">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold"
-                    : ""
+                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold text-xl"
+                    : "text-xl"
                 }
               >
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="mr-5">
               <NavLink
                 to="/apps"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold"
-                    : ""
+                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold text-xl"
+                    : "text-xl"
                 }
               >
                 Apps
               </NavLink>
             </li>
-            <li>
+            <li className="mr-5">
               <NavLink
                 to="/installation"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold"
-                    : ""
+                    ? "text-purple-600 border-b-2 border-purple-600 font-semibold text-xl"
+                    : "text-xl"
                 }
               >
                 Installation
@@ -104,15 +106,14 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <a
-  href="https://github.com/Sakib8git?tab=repositories"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 hover:from-purple-700 hover:to-indigo-700 border-none gap-2"
->
-  <Github className="w-5 h-5"
-></Github>
-  Contribute
-</a>
+            href="https://github.com/Sakib8git?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 hover:from-purple-700 hover:to-indigo-700 border-none gap-2"
+          >
+            <Github className="w-5 h-5"></Github>
+            Contribute
+          </a>
         </div>
       </div>
     </div>
