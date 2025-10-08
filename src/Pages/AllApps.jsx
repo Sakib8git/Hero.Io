@@ -3,7 +3,7 @@ import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
 const AllApps = ({ products }) => {
   const { image, title, ratingAvg, downloads } = products;
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       
