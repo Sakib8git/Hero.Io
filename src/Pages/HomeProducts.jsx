@@ -1,12 +1,15 @@
 import React from "react";
 import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
+import { Link } from "react-router";
 const HomeProducts = ({ products }) => {
   // console.log(products);
-  const { image, title, ratingAvg, downloads } = products;
+  const {id, image, title, ratingAvg, downloads } = products;
 
   return (
-    <div className="hover:scale-105 transition ease-in-out">
+
+
+    <Link to={`/apps/${id}`} className="hover:scale-105 transition ease-in-out">
       <div className="card bg-base-100  shadow-md border border-gray-100">
         <figure className="px-6 pt-6">
           <img
@@ -34,7 +37,7 @@ const HomeProducts = ({ products }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
