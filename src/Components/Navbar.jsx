@@ -58,7 +58,7 @@ const Navbar = () => {
           {/* small screen */}
 
           {/* note:Logo */}
-          <Link to="/" className=" text-xl text-purple-600 font-semibold flex items-center gap-2">
+          <Link to="/" className=" text-2xl text-purple-600 font-bold flex items-center gap-2">
             <img src={logo} alt="logo" className="h-6 w-6" />
             HERO.IO
           </Link>

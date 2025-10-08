@@ -119,7 +119,7 @@ const Home = () => {
           <h1 className="font-bold text-5xl">Trending Apps</h1>
           <p>Explore All Trending Apps on the Market developed by us</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 container mx-auto mb-6 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 container mx-auto mb-6 px-3 ">
           {fetureProducts.map((products, i) => (
             <HomeProducts key={i} products={products}></HomeProducts>
           ))}

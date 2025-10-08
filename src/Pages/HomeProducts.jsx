@@ -15,7 +15,7 @@ const HomeProducts = ({ products }) => {
           <img
             src={image} // replace with your actual image path
             alt="Forest App"
-            className="rounded-xl  object-contain"
+            className="rounded-xl w-40  object-contain"
           />
         </figure>
 

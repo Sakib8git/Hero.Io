@@ -100,7 +100,7 @@ const AppDetails = () => {
         <img
           src={image}
           alt={title}
-          className="w-full md:w-64 h-64 object-cover rounded-md"
+          className=" md:w-64 h-64 object-cover rounded-md"
         />
 
         {/* dtails */}

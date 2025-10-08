@@ -49,11 +49,14 @@ const Installation = () => {
       </div>
 
       {/* note:---------Sort--------------------- */}
-      <div className="flex justify-between items-center mb-6 px-3">
-        <p className="text-xl font-semibold">{installList.length} Apps Found</p>
+      <div className="flex flex-col md:flex-row md:justify-between items-center mb-6 px-3 gap-4">
+        <p className="text-xl font-semibold text-center pb-2">
+          {installList.length} Apps Found
+        </p>
 
         <select
-          className="select select-bordered"
+          className="select select-bordered 
+          "
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
         >
@@ -67,7 +70,7 @@ const Installation = () => {
 
       {sortedItem.length === 0 ? (
         <div className="text-center text-gray-500 text-lg my-20">
-          <h1 className="text-4xl font-bold ">No Installed App  Found!</h1>
+          <h1 className="text-4xl font-bold ">No Installed App Found!</h1>
         </div>
       ) : (
         sortedItem.map((ap) => (
