@@ -11,8 +11,16 @@ const Home = () => {
   // console.log(appsData);
   const appsDataHook = useProducts();
   console.log(appsDataHook.apps);
+  const {  loading, error } = useProducts();
   const appsData= appsDataHook.apps
   const fetureProducts = appsData.slice(0, 8);
+
+if (loading) return <p className="text-center">Loading...</p>;
+  if (error)
+    return <p className="text-center text-red-500">Error loading app</p>;
+
+
+
   return (
     <div className="">
       <div className="  px-4 lg:px-20 max-w-6xl mx-auto">

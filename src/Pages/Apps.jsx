@@ -9,6 +9,7 @@ const Apps = () => {
   const appsDataHook = useProducts();
   const appsData = appsDataHook.apps;
   console.log(appsData);
+  const {  loading, error } = useProducts();
   // !--------------search part
   const [search, setSearch] = useState("");
   const term = search.trim().toLowerCase();
@@ -17,6 +18,10 @@ const Apps = () => {
     : appsData;
 
   // !--------------------
+  if (loading) return <p className="text-center">Loading...</p>;
+  if (error)
+    return <p className="text-center text-red-500">Error loading app</p>;
+
   return (
     <div>
       <div className="text-center space-y-4 mt-20 mb-10">

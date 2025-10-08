@@ -12,8 +12,9 @@ const AppDetails = () => {
   const { apps, loading, error } = useProducts();
 
   const detailsOfApp = apps.find((ap) => ap.id === appId);
-  // *Note:---btn-----
+  // *Note:--- for btn-----
   const [installed, setInstalled] = useState(false);
+  // *Note:--- for btn-----
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (error)
@@ -90,16 +91,14 @@ const AppDetails = () => {
             onClick={handleInstall}
             // disabled={installed}
             className={`${
-              installed
-                ? "bg-[#047d007c] "
-                : "bg-[#00D390] hover:bg-[#019b6a]"
+              installed ? "bg-[#047d007c] " : "bg-[#00D390] hover:bg-[#019b6a]"
             } text-white font-semibold py-2 px-6 rounded ml-5`}
           >
             {installed ? "Installed" : `Install Now (${size} MB)`}
           </button>
         </div>
       </div>
-<div className="border-t border-gray-300 mt-6"></div>
+      <div className="border-t border-gray-300 mt-6"></div>
       {/* Optional Description Section */}
       {/* <p className="mt-6 text-gray-700 leading-relaxed">{description}</p> */}
 
