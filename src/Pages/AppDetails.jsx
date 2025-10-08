@@ -55,7 +55,7 @@ const AppDetails = () => {
 
   return (
     <div className="px-5 py-5 md:px-16 md:py-10">
-      <div className="flex flex-col md:flex-row gap-6 items-start bg-white rounded-lg shadow-md p-6">
+      <div className="flex flex-col md:flex-row gap-6 items-center md:items-start bg-white rounded-lg shadow-md p-6">
         {/* Left Image */}
         <img
           src={image}
@@ -111,6 +111,8 @@ const AppDetails = () => {
         </div>
       </div>
       <div className="border-t border-gray-300 mt-6"></div>
+      {/* app details */}
+      {/* ---------------------------------------------- */}
 
       {/* barChart */}
       <div className="bg-white p-4 rounded shadow-md">
@@ -137,9 +139,14 @@ const AppDetails = () => {
         </ResponsiveContainer>
       </div>
       {/* barChart */}
-      {/* Descrip */}
-      <p className="mt-6 text-gray-700 leading-relaxed">{description}</p>
+      {/* ---------------------------------------------- */}
 
+      {/* Descrip */}
+      <div>
+        <h3 className="mt-10 text-2xl font-semibold">Description</h3>
+        <p className="mt-6 text-gray-700 leading-relaxed">{description}</p>
+      </div>
+      {/* ---------------------------------------------- */}
       <ToastContainer />
     </div>
   );
