@@ -42,7 +42,7 @@ const Home = () => {
             </p>
 
             {/* Download Buttons */}
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4 mb-6 md:mb-2">
               <a
                 href="https://play.google.com/store"
                 target="_blank"
