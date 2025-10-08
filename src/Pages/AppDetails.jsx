@@ -28,32 +28,34 @@ const AppDetails = () => {
   const [installed, setInstalled] = useState(false);
   // !---already thakle emne dekhao
   useEffect(() => {
-  const existingList = JSON.parse(localStorage.getItem("installedApps"));
-  const isAlreadyInstalled = existingList?.some((p) => p.id === appId);
-  if (isAlreadyInstalled) {
-    setInstalled(true);
-  }
-}, [appId]);
+    const existingList = JSON.parse(localStorage.getItem("installedApps"));
+    const isAlreadyInstalled = existingList?.some((p) => p.id === appId);
+    if (isAlreadyInstalled) {
+      setInstalled(true);
+    }
+  }, [appId]);
   // *Note:--- for btn-----
 
   if (loading) return <p className="text-center">Loading...</p>;
   if (error)
     return <p className="text-center text-red-500">Error loading app</p>;
   if (!detailsOfApp)
-    return <div className="flex flex-col items-center justify-center my-10 space-y-6">
-          <img src={noApp} alt="No App Found" className="w-72 md:w-96" />
-          <h2 className="text-2xl font-bold">OPPS!! APP NOT FOUND</h2>
-          <p className="text-gray-500 text-center max-w-md">
-            The App you are requesting is not found on our system. Please try
-            another app.
-          </p>
-          <Link
-            to="/"
-            className="bg-[#743DE7] hover:bg-[#5b2bbf] text-white font-semibold py-2 px-6 rounded"
-          >
-            Go Back!
-          </Link>
-        </div>;
+    return (
+      <div className="flex flex-col items-center justify-center my-10 space-y-6">
+        <img src={noApp} alt="No App Found" className="w-72 md:w-96" />
+        <h2 className="text-2xl font-bold">OPPS!! APP NOT FOUND</h2>
+        <p className="text-gray-500 text-center max-w-md">
+          The App you are requesting is not found on our system. Please try
+          another app.
+        </p>
+        <Link
+          to="/"
+          className="bg-[#743DE7] hover:bg-[#5b2bbf] text-white font-semibold py-2 px-6 rounded"
+        >
+          Go Back!
+        </Link>
+      </div>
+    );
 
   const {
     image,
@@ -67,12 +69,7 @@ const AppDetails = () => {
     ratings,
   } = detailsOfApp;
 
-  
   // !---Instal btn handle + local storage--ad-----
-  
-
-  
-
 
   // -------------------------
   const handleAddInstallation = () => {

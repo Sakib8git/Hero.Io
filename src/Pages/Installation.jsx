@@ -3,12 +3,27 @@ import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
 const Installation = () => {
   const [installList, setInstallList] = useState([]);
-  console.log(installList);
+  // console.log(installList);
+  const [sortOrder, setSortOrder] = useState("none");
+
+  // --------apps from localStorage---------------
   useEffect(() => {
     const savedList = JSON.parse(localStorage.getItem("installedApps"));
     if (savedList) setInstallList(savedList);
   }, []);
+  // --------------------------
+  // Sort logic
+  const sortedItem = (() => {
+  if (sortOrder === "downloads-asc") {
+    return [...installList].sort((a, b) => a.downloads - b.downloads);
+  } else if (sortOrder === "downloads-desc") {
+    return [...installList].sort((a, b) => b.downloads - a.downloads);
+  } else {
+    return installList;
+  }
+})();
 
+  // !-------------------------------------
   return (
     <div className="px-6">
       <div className="text-center space-y-4 mt-20 mb-10">
@@ -20,16 +35,20 @@ const Installation = () => {
       <div className="flex justify-between items-center mb-6 px-3">
         <p className="text-xl font-semibold">{installList.length} Apps Found</p>
 
-        <select className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-700">
-          <option>Sort By Size</option>
-          <option>Sort By Rating</option>
-          <option>Sort By Downloads</option>
+        <select
+          className="select select-bordered"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option value="none">Sort by Downloads</option>
+          <option value="downloads-asc">Low → High</option>
+          <option value="downloads-desc">High → Low</option>
         </select>
       </div>
 
       {/* Note:------Install App------------------------ */}
 
-      {installList.map((ap) => (
+      {sortedItem.map((ap) => (
         <div className="flex items-center justify-between bg-white rounded-lg shadow-sm p-4 mb-5  ">
           {/* Left: App Info */}
           <div className="flex items-center gap-4">
