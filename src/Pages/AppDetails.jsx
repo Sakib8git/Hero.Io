@@ -5,7 +5,18 @@ import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
 import like from "../assets/icon-review.png";
 import { toast, ToastContainer } from "react-toastify";
+// !bar chart--------
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  LabelList,
+} from "recharts";
 
+// !bar chart--------
 const AppDetails = () => {
   const { id } = useParams();
   const appId = parseInt(id);
@@ -31,6 +42,7 @@ const AppDetails = () => {
     ratingAvg,
     reviews,
     size,
+    ratings,
   } = detailsOfApp;
 
   const handleInstall = () => {
@@ -99,8 +111,34 @@ const AppDetails = () => {
         </div>
       </div>
       <div className="border-t border-gray-300 mt-6"></div>
-      {/* Optional Description Section */}
-      {/* <p className="mt-6 text-gray-700 leading-relaxed">{description}</p> */}
+
+      {/* barChart */}
+      <div className="bg-white p-4 rounded shadow-md">
+        <h3 className="text-lg font-semibold mb-4 text-center">Ratings</h3>
+        <ResponsiveContainer width="100%" height={250}>
+          <BarChart
+            layout="vertical"
+            data={ratings}
+            margin={{ top: 10, right: 30, left: 20, bottom: 10 }}
+          >
+            <XAxis type="number" tick={{ fontSize: 12 }} />
+            <YAxis
+              dataKey="name"
+              type="category"
+              tick={{ fontSize: 12 }}
+              width={80}
+            />
+            <Tooltip />
+            <Bar dataKey="count" fill="#f97316">
+              {" "}
+              <LabelList dataKey="count" position="right" />
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+      {/* barChart */}
+      {/* Descrip */}
+      <p className="mt-6 text-gray-700 leading-relaxed">{description}</p>
 
       <ToastContainer />
     </div>
