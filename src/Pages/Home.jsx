@@ -2,12 +2,16 @@ import React from "react";
 import banner from "../assets/hero.png";
 import gplay from "../assets/google-play.png";
 import astore from "../assets/app-store.png";
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
 import AllProducts from "./HomeProducts";
 import HomeProducts from "./HomeProducts";
+import useProducts from "../hooks/useProducts";
 const Home = () => {
-  const appsData = useLoaderData();
+  // const appsData = useLoaderData();
   // console.log(appsData);
+  const appsDataHook = useProducts();
+  console.log(appsDataHook.apps);
+  const appsData= appsDataHook.apps
   const fetureProducts = appsData.slice(0, 8);
   return (
     <div className="">

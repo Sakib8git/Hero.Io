@@ -1,10 +1,13 @@
 import React from "react";
 import { useLoaderData } from "react-router";
 import AllApps from "./AllApps";
+import useProducts from "../hooks/useProducts";
 
 const Apps = () => {
-  const appsData = useLoaderData();
-//   console.log(appsData);
+  // const appsData = useLoaderData();
+  // console.log(appsData);
+  const appsDataHook = useProducts();
+  const appsData= appsDataHook.apps
   return (
     <div>
       <div className="text-center space-y-4 mt-20 mb-10">

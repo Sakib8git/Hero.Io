@@ -2,7 +2,7 @@ import React from "react";
 import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
 const HomeProducts = ({ products }) => {
-  console.log(products);
+  // console.log(products);
   const { image, title, ratingAvg, downloads } = products;
 
   return (
