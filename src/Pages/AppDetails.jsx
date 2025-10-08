@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import useProducts from "../hooks/useProducts";
 import down from "../assets/icon-downloads.png";
@@ -25,6 +25,14 @@ const AppDetails = () => {
   const detailsOfApp = apps.find((ap) => ap.id === appId);
   // *Note:--- for btn-----
   const [installed, setInstalled] = useState(false);
+  // !---already thakle emne dekhao
+  useEffect(() => {
+  const existingList = JSON.parse(localStorage.getItem("installedApps"));
+  const isAlreadyInstalled = existingList?.some((p) => p.id === appId);
+  if (isAlreadyInstalled) {
+    setInstalled(true);
+  }
+}, [appId]);
   // *Note:--- for btn-----
 
   if (loading) return <p className="text-center">Loading...</p>;
@@ -45,25 +53,46 @@ const AppDetails = () => {
     ratings,
   } = detailsOfApp;
 
-  const handleInstall = () => {
-    // console.log(`Installing ${title}`);
+  
+  // !---Instal btn handle + local storage--ad-----
+  
+
+  
+
+
+  // -------------------------
+  const handleAddInstallation = () => {
+    const existingList = JSON.parse(localStorage.getItem("installedApps"));
+    let updatedList = [];
+
+    if (existingList) {
+      const isDuplicate = existingList.some((p) => p.id === detailsOfApp.id);
+      if (isDuplicate) {
+        toast.error(`😿 ${title} is Already installed`);
+        return;
+      }
+      updatedList = [...existingList, detailsOfApp];
+    } else {
+      updatedList.push(detailsOfApp);
+    }
+
+    localStorage.setItem("installedApps", JSON.stringify(updatedList));
     setInstalled(true);
-
-    toast(`Installing ${title}`);
-    // Optional: localStorage logic or toast
+    toast.success(`🧞‍♂️ ${title} has been successfully installed`);
   };
-
+  // !------------------------------------
+  // !------------------------------------
   return (
     <div className="px-5 py-5 md:px-16 md:py-10">
       <div className="flex flex-col md:flex-row gap-6 items-center md:items-start bg-white rounded-lg shadow-md p-6">
-        {/* Left Image */}
+        {/* left side img */}
         <img
           src={image}
           alt={title}
           className="w-full md:w-64 h-64 object-cover rounded-md"
         />
 
-        {/* Right Details */}
+        {/* dtails */}
         <div className="flex-1 space-y-4">
           <h1 className="text-3xl font-bold text-gray-800">{title}</h1>
           <p className="text-sm text-gray-500">
@@ -100,7 +129,7 @@ const AppDetails = () => {
           </div>
 
           <button
-            onClick={handleInstall}
+            onClick={handleAddInstallation}
             // disabled={installed}
             className={`${
               installed ? "bg-[#047d007c] " : "bg-[#00D390] hover:bg-[#019b6a]"
@@ -114,7 +143,7 @@ const AppDetails = () => {
       {/* app details */}
       {/* ---------------------------------------------- */}
 
-      {/* barChart */}
+      {/* barChart reChart theje */}
       <div className="bg-white p-4 rounded shadow-md">
         <h3 className="text-lg font-semibold mb-4 text-center">Ratings</h3>
         <ResponsiveContainer width="100%" height={250}>

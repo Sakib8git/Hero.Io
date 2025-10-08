@@ -30,18 +30,9 @@ export const router = createBrowserRouter([
         Component: AppDetails,
       },
       {
-        path:'*',
-        Component:ErrorPg
+        path: "*",
+        Component: ErrorPg,
       },
-      
-
     ],
-
-    
   },
-  
 ]);
-
-
-
-

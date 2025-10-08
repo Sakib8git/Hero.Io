@@ -1,11 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 
 const Installation = () => {
-    return (
-        <div>
-            <h2>Installed</h2>
+
+const [installList , setInstallList]= useState([])
+
+useEffect(()=>{
+ const savedList = JSON.parse(localStorage.getItem("installedApps"));
+if(savedList) setInstallList(savedList)
+},[])
+
+  
+  return (
+    <div className="px-6">
+      <div className="text-center space-y-4 mt-20 mb-10">
+        <h1 className="font-bold text-5xl">Your Installed Apps</h1>
+        <p>Explore All Trending Apps on the Market developed by us</p>
+      </div>
+
+      {/* ----------------------------------- */}
+<div className="flex justify-between items-center mb-6 px-3">
+  <p className="text-xl font-semibold">{installList.length} Apps Found</p>
+
+  <select className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-700">
+    <option>Sort By Size</option>
+    <option>Sort By Rating</option>
+    <option>Sort By Downloads</option>
+  </select>
+</div>
+
+
+      {/* ----------------------------------- */}
+
+      <div className="flex items-center justify-between bg-white rounded-lg shadow-sm p-4 mb-5  ">
+        {/* Left: App Info */}
+        <div className="flex items-center gap-4">
+          {/* App Icon Placeholder */}
+          <div className="w-16 h-16 bg-gray-200 rounded-md"></div>
+
+          {/* App Details */}
+          <div className="">
+            <h2 className="text-lg font-semibold text-gray-800">{`title`}</h2>
+            <div className="flex gap-4 text-sm mt-1">
+              <div className="flex items-center gap-1 text-green-600">
+                <img src={`down`} alt="downloads" className="w-4 h-4" />
+                <span>{`downloads`}M</span>
+              </div>
+              <div className="flex items-center gap-1 text-orange-500">
+                <img src={`star`} alt="rating" className="w-4 h-4" />
+                <span>{`ratingAvg`}</span>
+              </div>
+              <div className="text-gray-500">{`size`} MB</div>
+            </div>
+          </div>
         </div>
-    );
+
+        {/* Right: Action */}
+        {`installed` && (
+          <button className="bg-[#00D390] hover:bg-[#019b6a] text-white font-semibold px-4 py-2 rounded">
+            Uninstall
+          </button>
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Installation;

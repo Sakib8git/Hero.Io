@@ -6,20 +6,24 @@ import { Link } from "react-router";
 import AllProducts from "./HomeProducts";
 import HomeProducts from "./HomeProducts";
 import useProducts from "../hooks/useProducts";
+import { DNA } from "react-loader-spinner";
 const Home = () => {
   // const appsData = useLoaderData();
   // console.log(appsData);
   const appsDataHook = useProducts();
   console.log(appsDataHook.apps);
-  const {  loading, error } = useProducts();
-  const appsData= appsDataHook.apps
+  const { loading, error } = useProducts();
+  const appsData = appsDataHook.apps;
   const fetureProducts = appsData.slice(0, 8);
 
-if (loading) return <p className="text-center">Loading...</p>;
+  if (loading)
+    return (
+      <div className="flex justify-center items-center min-h-[300px]">
+        <DNA/>
+      </div>
+    );
   if (error)
     return <p className="text-center text-red-500">Error loading app</p>;
-
-
 
   return (
     <div className="">
