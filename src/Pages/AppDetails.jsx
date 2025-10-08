@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import useProducts from "../hooks/useProducts";
 import down from "../assets/icon-downloads.png";
 import star from "../assets/icon-ratings.png";
 import like from "../assets/icon-review.png";
 import { toast, ToastContainer } from "react-toastify";
+import noApp from "../assets/App-Error.png";
 // !bar chart--------
 import {
   BarChart,
@@ -39,7 +40,20 @@ const AppDetails = () => {
   if (error)
     return <p className="text-center text-red-500">Error loading app</p>;
   if (!detailsOfApp)
-    return <p className="text-center text-gray-500">App not found</p>;
+    return <div className="flex flex-col items-center justify-center my-10 space-y-6">
+          <img src={noApp} alt="No App Found" className="w-72 md:w-96" />
+          <h2 className="text-2xl font-bold">OPPS!! APP NOT FOUND</h2>
+          <p className="text-gray-500 text-center max-w-md">
+            The App you are requesting is not found on our system. Please try
+            another app.
+          </p>
+          <Link
+            to="/"
+            className="bg-[#743DE7] hover:bg-[#5b2bbf] text-white font-semibold py-2 px-6 rounded"
+          >
+            Go Back!
+          </Link>
+        </div>;
 
   const {
     image,

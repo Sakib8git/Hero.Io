@@ -26,7 +26,7 @@ const HomeProducts = ({ products }) => {
             {/* Downloads */}
             <div className="flex items-center gap-1 text-green-600 text-sm">
               <img className="w-3" src={down} alt="" />
-              <span>{downloads}</span>
+              <span>{downloads} M</span>
             </div>
 
             {/* Rating */}
