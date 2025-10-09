@@ -7,13 +7,13 @@ const Installation = () => {
   // console.log(installList);
   const [sortOrder, setSortOrder] = useState("none");
 
-  // --------apps from localStorage---------------
+  // --------apps [pabo] localStorage tjrke---------------
   useEffect(() => {
     const savedList = JSON.parse(localStorage.getItem("installedApps"));
     if (savedList) setInstallList(savedList);
   }, []);
   // --------------------------
-  // Sort logic
+  // Sort fmc
   const sortedItem = (() => {
     if (sortOrder === "downloads-asc") {
       return [...installList].sort((a, b) => a.downloads - b.downloads);
@@ -75,7 +75,7 @@ const Installation = () => {
       ) : (
         sortedItem.map((ap) => (
           <div className="flex items-center justify-between bg-white rounded-lg shadow-sm p-4 mb-5  ">
-            {/* Left: App Info */}
+            {/* LHS App Info */}
             <div className="flex items-center gap-4">
               {/* App Icon Placeholder */}
               <div className="w-16 h-16 bg-gray-200 rounded-md">
@@ -101,7 +101,7 @@ const Installation = () => {
               </div>
             </div>
 
-            {/* Right: Action */}
+            {/* RHS */}
 
             <button
               onClick={() => handleRemoveInstallation(ap.id)}

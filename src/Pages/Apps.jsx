@@ -7,14 +7,14 @@ import { DNA } from "react-loader-spinner";
 const Apps = () => {
   const { apps, loading, error } = useProducts();
 
-  // Search logic
+  //! Search fnc*******************************
   const [search, setSearch] = useState("");
   const term = search.trim().toLowerCase();
   const searchedApps = term
     ? apps.filter((product) => product.title.toLowerCase().includes(term))
     : apps;
 
-  // Spinner logic
+  //! Spinner fnc_________________________
   const [loadingSpinner, setLoadingSpinner] = useState(false);
   useEffect(() => {
     setLoadingSpinner(true);
@@ -24,22 +24,22 @@ const Apps = () => {
     return () => clearTimeout(delay);
   }, [search]);
 
-  // Fallbacks
+  // !Flbk----------------------
   if (loading) return <p className="text-center">Loading...</p>;
   if (error)
     return <p className="text-center text-red-500">Error loading app</p>;
 
   return (
     <div>
-      {/* Header */}
+      {/* header */}
       <div className="text-center space-y-4 mt-20 mb-10">
         <h1 className="font-bold text-5xl">Our All Applications</h1>
-        <p>
+        <p className="text-gray-600">
           Explore All Apps on the Market developed by us. We code for Millions
         </p>
       </div>
 
-      {/* Search + Count */}
+      {/* Search pat Count app */}
       <div className="mb-5 container mx-auto flex flex-col md:flex-row justify-between items-center gap-4 flex-wrap px-5 md:px-3">
         <p className="text-2xl font-semibold text-center md:text-left">
           ({searchedApps.length}) Apps Found
@@ -50,7 +50,7 @@ const Apps = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             type="search"
-            placeholder="Search"
+            placeholder="🔍 Search Apps"
             className="w-full md:w-64"
           />
         </label>
@@ -59,14 +59,7 @@ const Apps = () => {
       {/*React spinner Spinner add korlam */}
       {loadingSpinner ? (
         <div className="flex justify-center items-center min-h-[300px]">
-          <DNA
-            // visible={true}
-            // height={80}
-            // width={80}
-            // ariaLabel="dna-loading"
-            // wrapperStyle={{}}
-            // wrapperClass="dna-wrapper"
-          />
+          <DNA />
         </div>
       ) : searchedApps.length === 0 ? (
         //! No  Found----------
@@ -85,7 +78,7 @@ const Apps = () => {
           </Link>
         </div>
       ) : (
-        //! ________All app e patailam____________
+        //! ________All app e patailam____________=====================================
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 container mx-auto mb-6 px-3">
           {searchedApps.map((products, i) => (
             <AllApps key={i} products={products} />

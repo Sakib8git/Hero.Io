@@ -29,19 +29,22 @@ const Home = () => {
     <div className="">
       <div className="  px-4 lg:px-20 max-w-6xl mx-auto">
         <div className="flex flex-col-reverse lg:flex-col items-center gap-10 ">
-          {/* Text Section */}
+          {/* Text patt */}
           <div className="flex-1 text-center ">
             <h1 className="text-7xl font-bold text-[#192F45]  mb-4">
               We Build <br />{" "}
-              <span className="bg-gradient-to-r from-[#672af5] to-[#904df4de] bg-clip-text text-transparent font-bold">Productive</span> Apps
+              <span className="bg-gradient-to-r from-[#672af5] to-[#904df4de] bg-clip-text text-transparent font-bold">
+                Productive
+              </span>{" "}
+              Apps
             </h1>
             <p className="text-gray-600 mb-6 text-xl">
-              At HERD.IO, we craft innovative apps designed to make everyday life
-              simpler, smarter, and more exciting. Our goal is to turn your
+              At HERD.IO, we craft innovative apps designed to make everyday
+              life simpler, smarter, and more exciting. Our goal is to turn your
               ideas into digital experiences that truly make an impact.
             </p>
 
-            {/* Download Buttons */}
+            {/* Download Btm */}
             <div className="flex justify-center gap-4 mb-6 md:mb-2">
               <a
                 href="https://play.google.com/store"
@@ -53,7 +56,7 @@ const Home = () => {
                 Google Play
               </a>
 
-              {/* App Store Button */}
+              {/* App Store  */}
               <a
                 href="https://www.apple.com/app-store/"
                 target="_blank"
@@ -66,7 +69,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Image Section */}
+          {/* img part */}
           <div className="flex-1">
             <img
               src={banner}
@@ -86,16 +89,16 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4 sm:px-8 md:px-12 lg:px-20 text-center">
-            {/* Total Downloads */}
+            {/*  Downloads */}
             <div className="lg:p-6">
               <p className="text-lg text-[#E0D4FF]">Total Downloads</p>
               <h3 className="text-5xl font-bold my-4 text-[#ffc61d]">29.6M+</h3>
-              <p className="mt-2 text-lg text-[#A0FFD6]">
+              <p className="mt-2 text-lg text-[#f5f8b7]">
                 21% More Than Last Month
               </p>
             </div>
 
-            {/* Total Reviews */}
+            {/*  Reviews */}
             <div className="lg:p-6">
               <p className="text-lg text-[#E0D4FF]">Total Reviews</p>
               <h3 className="text-5xl font-bold my-4 text-[#14de4d]">906K+</h3>
@@ -104,11 +107,11 @@ const Home = () => {
               </p>
             </div>
 
-            {/* Active Apps */}
+            {/* active */}
             <div className="lg:p-6">
               <p className="text-lg text-[#E0D4FF]">Active Apps</p>
-              <h3 className="text-5xl font-bold my-4 text-[#73ff45]">132+</h3>
-              <p className="mt-2 text-lg text-[#A0FFD6]">31 More Will Launch</p>
+              <h3 className="text-5xl font-bold my-4 text-[#ff6b7d]">132+</h3>
+              <p className="mt-2 text-lg text-[#ffc9d1]">31 More Will Launch</p>
             </div>
           </div>
         </section>
