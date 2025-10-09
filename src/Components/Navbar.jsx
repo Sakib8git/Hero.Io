@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-base-100 shadow-sm px-8">
         <div className="navbar-start">
-            {/* note:small screen */}
+          {/* note:small screen */}
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -58,9 +58,11 @@ const Navbar = () => {
           {/* small screen */}
 
           {/* note:Logo */}
-          <Link to="/" className=" text-2xl text-purple-600 font-bold flex items-center gap-2">
+          <Link to="/" className="text-2xl font-bold flex items-center gap-2">
             <img src={logo} alt="logo" className="h-6 w-6" />
-            HERO.IO
+            <span className="bg-gradient-to-r from-[#672af5] to-[#904df4de] bg-clip-text text-transparent">
+              HERO.IO
+            </span>
           </Link>
           {/* note:Logo */}
         </div>
@@ -109,7 +111,7 @@ const Navbar = () => {
             href="https://github.com/Sakib8git?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-700 hover:from-purple-700 hover:to-indigo-700 border-none gap-2"
+            className="btn text-white bg-gradient-to-r from-[#632EE3] to-[#9A5EF1] hover:from-purple-700 hover:to-indigo-700 border-none gap-2 transition ease-in-out"
           >
             <Github className="w-5 h-5"></Github>
             Contribute
