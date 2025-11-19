@@ -39,22 +39,24 @@ Built to simplify app discovery and installation across devices, it allows users
 **Netlify** – For deployment  
 
 ## 📦 Dependencies
-- `@tailwindcss/vite`  
-- `axios`  
-- `lucide-react`  
-- `react`  
-- `react-loader-spinner`  
-- `react-router`  
-- `react-toastify`  
-- `recharts`  
-- `tailwindcss`
-- `daisyui`  
-- `eslint`  
-- `eslint-plugin-react-hooks`  
-- `eslint-plugin-react-refresh`  
-- `globals`  
-- `vite`
-
+```json{
+  "@tailwindcss/vite": "^1.0.0",
+  "axios": "^1.7.2",
+  "lucide-react": "^0.263.0",
+  "react": "^18.2.0",
+  "react-loader-spinner": "^5.3.4",
+  "react-router": "^6.22.3",
+  "react-toastify": "^9.1.3",
+  "recharts": "^2.7.2",
+  "tailwindcss": "^3.4.1",
+  "daisyui": "^4.10.2",
+  "eslint": "^8.56.0",
+  "eslint-plugin-react-hooks": "^4.6.0",
+  "eslint-plugin-react-refresh": "^0.4.6",
+  "globals": "^13.24.0",
+  "vite": "^5.0.10"
+}
+```
 ---
 
 
