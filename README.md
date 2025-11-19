@@ -38,6 +38,28 @@ Built to simplify app discovery and installation across devices, it allows users
 **Microsoft Copilot** – Used to generate structured JSON data  
 **Netlify** – For deployment  
 
+## 📦 Dependencies
+- `@tailwindcss/vite`  
+- `axios`  
+- `lucide-react`  
+- `react`  
+- `react-loader-spinner`  
+- `react-router`  
+- `react-toastify`  
+- `recharts`  
+- `tailwindcss`
+- `daisyui`  
+- `eslint`  
+- `eslint-plugin-react-hooks`  
+- `eslint-plugin-react-refresh`  
+- `globals`  
+- `vite`
+
+---
+
+
+
+
 ---
 ###  Clone the Repository
 
