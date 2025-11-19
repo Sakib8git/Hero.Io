@@ -39,23 +39,32 @@ Built to simplify app discovery and installation across devices, it allows users
 **Netlify** – For deployment  
 
 ## 📦 Dependencies
-```json{
-  "@tailwindcss/vite": "^1.0.0",
-  "axios": "^1.7.2",
-  "lucide-react": "^0.263.0",
-  "react": "^18.2.0",
-  "react-loader-spinner": "^5.3.4",
-  "react-router": "^6.22.3",
-  "react-toastify": "^9.1.3",
-  "recharts": "^2.7.2",
-  "tailwindcss": "^3.4.1",
-  "daisyui": "^4.10.2",
-  "eslint": "^8.56.0",
-  "eslint-plugin-react-hooks": "^4.6.0",
-  "eslint-plugin-react-refresh": "^0.4.6",
-  "globals": "^13.24.0",
-  "vite": "^5.0.10"
-}
+```json
+ "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "axios": "^1.12.2",
+    "lucide-react": "^0.545.0",
+    "lucide-vue-next": "^0.545.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-loader-spinner": "^7.0.3",
+    "react-router": "^7.9.3",
+    "react-toastify": "^10.0.7-0",
+    "recharts": "^3.2.1",
+    "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "daisyui": "^5.1.27",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "vite": "^7.1.7"
+  }
 ```
 ---
 
