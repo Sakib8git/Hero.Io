@@ -21,6 +21,8 @@ Technologies :
 **Axios** – Promise-based HTTP client for API requests
 **ImgBB API** – For image hosting and upload functionality
 **React Spinners** – Lightweight loading animations for UI feedback
+
+https://projectheroio.netlify.app/apps
 **GitHub** – Commit tracking
 **LocalStorage API** – To manage installed apps persistently
 **Microsoft Copilot** – Used to generate structured JSON data.
