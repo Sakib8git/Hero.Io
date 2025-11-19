@@ -61,12 +61,29 @@ Built to simplify app discovery and installation across devices, it allows users
 
 
 ---
-###  Clone the Repository
+## Installation️ & Setup
+1. Clone the repo and install dependencies:
 
-`git clone https://github.com/Sakib8git/hero.io.git
-cd hero.io`
+```bash
+git clone https://github.com/Sakib8git/hero.io.git
+cd hero.io
+```
+2. Set up environment variables by creating a `.env` file in the root directory:
 
-## 📦 Local Setup Guide
-Install `npm install`
-Rin `npm run dev`
+```env
+DATABASE_URL=your_database_url
+JWT_SECRET=your_jwt_secret
+```
+
+3. Run the application:
+
+```bash
+npm run dev
+```
+## Contact
+
+
+**Email:** [Sakib](sakib30278@gmail.com)
+
+
 
