@@ -1,5 +1,8 @@
 App name: HERO.IO 📱
 
+Live Link : https://projectheroio.netlify.app/apps
+
+
 Description:
 HERO.IO is a responsive web application that showcases top-rated apps with details, live search, and interactive charts. Built to simplify discovery and installation across devices. Users can explore apps, view ratings and downloads, and manage their installations—all in one place.
 App Features
@@ -21,8 +24,6 @@ Technologies :
 **Axios** – Promise-based HTTP client for API requests
 **ImgBB API** – For image hosting and upload functionality
 **React Spinners** – Lightweight loading animations for UI feedback
-
-https://projectheroio.netlify.app/apps
 **GitHub** – Commit tracking
 **LocalStorage API** – To manage installed apps persistently
 **Microsoft Copilot** – Used to generate structured JSON data.
