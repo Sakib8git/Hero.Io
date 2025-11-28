@@ -12,6 +12,10 @@ Built to simplify app discovery and installation across devices, it allows users
 
 ---
 
+<img width="1905" height="2414" alt="projectheroio netlify app_" src="https://github.com/user-attachments/assets/942340c7-4626-4a73-a48e-acf40f004637" />
+
+
+
 ## 🚀 Features
 
 - 📱 Responsive layout for all devices  
